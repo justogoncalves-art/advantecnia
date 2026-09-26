@@ -44,6 +44,8 @@
   }
   @media (max-width:820px){ #adv2-eco-grid{grid-template-columns:1fr !important} #adv2-forma-grid{grid-template-columns:1fr !important} }
   @media (min-width:1060px){ #adv-sticky{display:none} }
+  @media (max-width:520px){ #adv-logo{width:150px !important} }
+  @media (max-width:900px){ #adv3-ia-map{grid-template-columns:repeat(2,minmax(0,1fr)) !important;grid-template-areas:"ia ia" "room sense" "flow core" !important} #adv3-ia-pts{grid-template-columns:1fr !important} }
   @media (max-width:1180px){ #adv2-nuria-grid{grid-template-columns:1fr !important} #adv2-nuria-grid > div:first-child{min-height:200px} #adv2-nuria-txt{background:rgba(255,255,255,.92)} }
   @media (max-width:1059px){ #adv-mainnav{display:none !important} #adv-headcta{display:none !important} body{padding-bottom:76px} }
 </style>
@@ -54,7 +56,7 @@
 <sc-if value="{{ isBar }}" hint-placeholder-val="{{ true }}">
 <header style="position:fixed;top:0;left:0;right:0;z-index:60;background:{{ barBg }};backdrop-filter:blur(8px);border-bottom:1px solid {{ barBorder }};transition:background 240ms cubic-bezier(.4,0,.2,1)">
   <div style="max-width:1240px;margin:0 auto;padding:0 24px;height:76px;display:flex;align-items:center;gap:32px">
-    <button onClick="{{ nav.home }}" style="background:none;border:0;padding:0;cursor:pointer;display:block;flex:0 0 auto" aria-label="Advantecnia — Inicio"><img src="assets/adv-logo-color.svg" alt="Advantecnia" style="width:196px;height:auto;display:block"></button>
+    <button onClick="{{ nav.home }}" style="background:none;border:0;padding:0;cursor:pointer;display:block;flex:0 0 auto" aria-label="Advantecnia — Inicio"><img id="adv-logo" src="assets/adv-logo-color.svg" alt="Advantecnia" style="width:196px;height:auto;display:block"></button>
     <nav id="adv-mainnav" style="display:flex;align-items:center;gap:28px;flex:1">
       <span aria-hidden="true" style="width:1px;height:26px;background:{{ barSep }};margin-right:4px"></span>
       <button onClick="{{ nav.home }}" style="position:relative;background:none;border:0;padding:8px 0;cursor:pointer;font-size:15px;font-weight:600;color:{{ barInk }}" style-hover="opacity:.72">Inicio<span aria-hidden="true" style="position:absolute;left:0;right:0;bottom:-2px;height:3px;border-radius:2px;background:#a7b42c;transform-origin:left;transform:scaleX({{ act.home }});transition:transform 240ms cubic-bezier(.4,0,.2,1)"></span></button>
@@ -96,12 +98,12 @@
     <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,34,49,.62) 0%,rgba(11,34,49,.30) 38%,rgba(11,34,49,.78) 100%)"></div>
     <div style="position:relative;width:100%;max-width:1240px;margin:0 auto;padding:140px 24px 72px">
       <div style="max-width:760px;padding:clamp(28px,3.6vw,48px);background:rgba(255,255,255,.10);backdrop-filter:blur(22px) saturate(130%);border:1px solid rgba(255,255,255,.22);box-shadow:0 24px 70px rgba(6,22,33,.38);clip-path:polygon(0 0, calc(100% - 48px) 0, 100% 48px, 100% 100%, 0 100%)">
-        <p style="font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#9EE2E9;margin-bottom:20px">Tecnología al servicio de las personas</p>
-        <h1 style="font-size:clamp(36px,4.8vw,60px);line-height:1.05;letter-spacing:-.025em;font-weight:800;color:#fff;text-wrap:balance">Llevamos tu hospital al siguiente nivel.</h1>
-        <p style="margin-top: 24px; font-size: 18px; line-height: 1.6; color: #EAF3F5; max-width: 56ch; text-wrap: pretty; font-weight: 400">Convertimos tu hospital en un referente más seguro, más humano y más eficiente, con tecnología que se integra con lo que ya tienes. <br>Sin obras interminables. Sin reemplazar lo que ya funciona.</p>
+        <p style="font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#9EE2E9;margin-bottom:20px">Impulsado por Connect.IA</p>
+        <h1 style="font-size:clamp(36px,4.8vw,60px);line-height:1.05;letter-spacing:-.025em;font-weight:800;color:#fff;text-wrap:balance">La inteligencia que lleva tu hospital al siguiente nivel.</h1>
+        <p style="margin-top: 24px; font-size: 18px; line-height: 1.6; color: #EAF3F5; max-width: 56ch; text-wrap: pretty; font-weight: 400">Connect.IA, nuestra inteligencia artificial, está detrás de cada sistema de tu hospital para que todo funcione según los parámetros de excelencia que exige el sector salud. Se integra con lo que ya tienes. <br>Sin obras interminables. Sin reemplazar lo que ya funciona.</p>
         <div style="margin-top:36px;display:flex;flex-wrap:wrap;gap:16px;align-items:center">
           <button onClick="{{ goAuditoria }}" style="background:#0E8C99;color:#fff;border:0;border-radius:999px;height:54px;padding:0 30px;font-size:16px;font-weight:700;cursor:pointer;transition:background 180ms,transform 180ms" style-hover="background:#0A6B75;transform:translateY(-1px)">Hablemos</button>
-          <button onClick="{{ goPorque }}" style="background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.45);border-radius:999px;height:54px;padding:0 26px;cursor:pointer;font-size:16px;font-weight:700;color:#fff;transition:background 180ms" style-hover="background:rgba(255,255,255,.22)">Descubre cómo ↓</button>
+          <button onClick="{{ goPorque }}" style="background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.45);border-radius:999px;height:54px;padding:0 26px;cursor:pointer;font-size:16px;font-weight:700;color:#fff;transition:background 180ms" style-hover="background:rgba(255,255,255,.22)">Conoce Connect.IA ↓</button>
         </div>
       </div>
     </div>
@@ -125,8 +127,8 @@
     </div>
   </section>
 
-  <section id="adv2-porque" data-rise="" style="background:#fff">
-    <div style="max-width:1240px;margin:0 auto;padding:112px 24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:64px;align-items:center">
+  <section id="adv2-porque" data-rise="" style="background:#fff;overflow:hidden">
+    <div style="max-width:1240px;margin:0 auto;padding:112px 24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:64px;align-items:center">
       <div>
         <h2 style="font-size:clamp(30px,3.4vw,44px);line-height:1.14;letter-spacing:-.02em;font-weight:800;color:#16374D;text-wrap:balance">Creemos que un hospital se mide por cómo cuida.</h2>
         <p style="margin-top:28px;font-size:19px;line-height:1.7;color:#55636E;text-wrap:pretty">Un hospital que cuida mejor, destaca. Gana la confianza de sus pacientes, retiene a su equipo y se convierte en referencia. Por eso llevamos más de 20 años poniendo la tecnología al servicio de las personas —y no al revés—.</p>
@@ -141,8 +143,42 @@
     </div>
   </section>
 
+  <section id="adv3-connectia" data-rise="" style="background:#16374D">
+    <div style="max-width:1240px;margin:0 auto;padding:104px 24px">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:56px;align-items:center">
+        <div>
+          <p style="font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#d8db96">Inteligencia artificial propia</p>
+          <h2 style="margin-top:16px;font-size:clamp(34px,4.4vw,58px);line-height:1.04;letter-spacing:-.03em;font-weight:800;color:#fff;text-wrap:balance">Connect.IA, el cerebro de todo el hospital.</h2>
+          <p style="margin-top:24px;font-size:19px;line-height:1.65;color:#DCE7EC;max-width:54ch;text-wrap:pretty">Connect.IA es la inteligencia artificial desarrollada por Advantecnia. Está detrás de todo el ecosistema SmartHospital y hace que cada sistema funcione según los parámetros de excelencia que exige el sector salud.</p>
+          <p style="margin-top:16px;font-size:17px;line-height:1.65;color:#C4D6DF;max-width:54ch;text-wrap:pretty">Las cuatro familias son sus sentidos y sus manos: captan lo que ocurre en cada habitación y cada área, y actúan donde hace falta. NurIA y AdvantLink mantienen su función; Connect.IA los orquesta.</p>
+        </div>
+        <div id="adv3-ia-map" style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.25fr) minmax(0,1fr);grid-template-areas:'room ia sense' 'flow ia core';gap:14px">
+          <div style="grid-area:room;border:1px solid rgba(255,255,255,.18);border-radius:16px;padding:20px;display:flex;flex-direction:column;gap:6px"><p style="font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#7FD4DB">Paciente</p><p style="font-size:18px;font-weight:800;color:#fff">SmartRoom</p></div>
+          <div style="grid-area:sense;border:1px solid rgba(255,255,255,.18);border-radius:16px;padding:20px;display:flex;flex-direction:column;gap:6px"><p style="font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#7FD4DB">Monitorización</p><p style="font-size:18px;font-weight:800;color:#fff">SmartSense</p></div>
+          <div style="grid-area:ia;background:#a7b42c;border-radius:20px;padding:28px 22px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;gap:14px;box-shadow:0 18px 50px rgba(0,0,0,.28)">
+            <p style="font-size:clamp(26px,2.6vw,34px);font-weight:800;letter-spacing:-.02em;color:#fff">Connect.IA</p>
+            <p style="font-size:14px;line-height:1.5;color:#fff;font-weight:600">Orquesta</p>
+            <div style="display:flex;flex-wrap:wrap;gap:8px;justify-content:center">
+              <span style="height:30px;padding:0 12px;display:inline-flex;align-items:center;border-radius:999px;background:#fff;color:#16374D;font-size:13px;font-weight:700">NurIA</span>
+              <span style="height:30px;padding:0 12px;display:inline-flex;align-items:center;border-radius:999px;background:#fff;color:#16374D;font-size:13px;font-weight:700">AdvantLink</span>
+            </div>
+          </div>
+          <div style="grid-area:flow;border:1px solid rgba(255,255,255,.18);border-radius:16px;padding:20px;display:flex;flex-direction:column;gap:6px"><p style="font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#7FD4DB">Operación</p><p style="font-size:18px;font-weight:800;color:#fff">SmartFlow</p></div>
+          <div style="grid-area:core;border:1px solid rgba(255,255,255,.18);border-radius:16px;padding:20px;display:flex;flex-direction:column;gap:6px"><p style="font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#7FD4DB">Plataforma</p><p style="font-size:18px;font-weight:800;color:#fff">SmartCore</p></div>
+        </div>
+      </div>
+      <ol data-stagger="" style="margin-top:72px;list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:32px">
+        <li style="padding-top:20px;border-top:1px solid rgba(255,255,255,.18)"><span style="font-size:13px;font-weight:800;letter-spacing:.1em;color:#d8db96">01</span><p style="margin-top:10px;font-size:20px;font-weight:800;color:#fff">Escucha</p><p style="margin-top:8px;font-size:16px;line-height:1.6;color:#C9DCE4;text-wrap:pretty">Recoge en tiempo real las señales de habitaciones, sensores, dispositivos y sistemas.</p></li>
+        <li style="padding-top:20px;border-top:1px solid rgba(255,255,255,.18)"><span style="font-size:13px;font-weight:800;letter-spacing:.1em;color:#d8db96">02</span><p style="margin-top:10px;font-size:20px;font-weight:800;color:#fff">Entiende</p><p style="margin-top:8px;font-size:16px;line-height:1.6;color:#C9DCE4;text-wrap:pretty">Interpreta cada evento con el contexto del paciente y los protocolos del centro.</p></li>
+        <li style="padding-top:20px;border-top:1px solid rgba(255,255,255,.18)"><span style="font-size:13px;font-weight:800;letter-spacing:.1em;color:#d8db96">03</span><p style="margin-top:10px;font-size:20px;font-weight:800;color:#fff">Actúa</p><p style="margin-top:8px;font-size:16px;line-height:1.6;color:#C9DCE4;text-wrap:pretty">Prioriza, escala y lleva cada aviso a la persona adecuada, en el momento adecuado.</p></li>
+        <li style="padding-top:20px;border-top:1px solid rgba(255,255,255,.18)"><span style="font-size:13px;font-weight:800;letter-spacing:.1em;color:#d8db96">04</span><p style="margin-top:10px;font-size:20px;font-weight:800;color:#fff">Mejora</p><p style="margin-top:8px;font-size:16px;line-height:1.6;color:#C9DCE4;text-wrap:pretty">Mide cada respuesta y convierte los datos en decisiones para dirigir con criterio.</p></li>
+      </ol>
+      <button type="button" onClick="{{ goSoluciones }}" style="margin-top:56px;display:inline-flex;align-items:center;gap:10px;background:#a7b42c;color:#fff;border:0;border-radius:999px;min-height:54px;padding:12px 30px;font-size:16px;font-weight:700;cursor:pointer;transition:background 180ms var(--ease-out),transform 180ms var(--ease-out)" style-hover="background:#8f9a24;transform:translateY(-1px)">Ver Connect.IA en cada solución<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round"><path d="M5 12h13M12.5 6l5.5 6-5.5 6"></path></svg></button>
+    </div>
+  </section>
+
   <section data-rise="" style="background:#fff">
-    <div style="max-width:1240px;margin:0 auto;padding:24px 24px 96px">
+    <div style="max-width:1240px;margin:0 auto;padding:96px 24px">
       <div style="background:#a7b42c;border-radius:40px;padding:clamp(48px,5.6vw,88px) clamp(24px,4.4vw,72px)">
         <h2 style="font-size:clamp(28px,3.2vw,40px);line-height:1.15;letter-spacing:-.02em;font-weight:800;color:#fff;text-align:center;text-wrap:balance">Nuestra forma de hacerlo es diferente.</h2>
         <div id="adv2-forma-grid" data-stagger="" style="margin-top:clamp(40px,4vw,60px);display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(36px,3.4vw,48px)">
@@ -158,8 +194,8 @@
           </div>
           <div style="display:flex;flex-direction:column;align-items:center;text-align:center">
             <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.4" stroke-linecap="round"><rect x="9" y="3" width="6" height="11" rx="3"></rect><path d="M5 11a7 7 0 0 0 14 0M12 18v3"></path></svg>
-            <h3 style="margin-top:20px;font-size:21px;font-weight:700;color:#fff">Ponemos la IA a tu favor</h3>
-            <p style="margin-top:12px;font-size:17px;line-height:1.6;color:#fff;max-width:34ch">Nuestra inteligencia artificial acompaña al paciente y libera a tu equipo para lo que de verdad importa.</p>
+            <h3 style="margin-top:20px;font-size:21px;font-weight:700;color:#fff">Connect.IA en el centro</h3>
+            <p style="margin-top:12px;font-size:17px;line-height:1.6;color:#fff;max-width:34ch">Nuestra inteligencia artificial propia coordina todo el ecosistema y libera a tu equipo para lo que de verdad importa.</p>
           </div>
         </div>
       </div>
@@ -171,7 +207,7 @@
       <div style="max-width:780px;margin:0 auto;text-align:center">
         <p style="font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#0E8C99">El ecosistema SmartHospital</p>
         <h2 style="margin-top:16px;font-size:clamp(28px,3.2vw,40px);line-height:1.15;letter-spacing:-.02em;font-weight:800;color:#16374D;text-wrap:balance">De una habitación conectada a un hospital completamente conectado.</h2>
-        <p style="margin-top:18px;font-size:18px;line-height:1.6;color:#55636E;text-wrap:pretty">SmartHospital es la forma Advantecnia de llevar tu hospital al siguiente nivel: un único ecosistema que conecta personas, espacios, alarmas, dispositivos y servicios. Empieza en una habitación y se extiende a todo el centro —sin cambiar lo que ya funciona—.</p>
+        <p style="margin-top:18px;font-size:18px;line-height:1.6;color:#55636E;text-wrap:pretty">SmartHospital es la forma Advantecnia de llevar tu hospital al siguiente nivel: un único ecosistema, gobernado por Connect.IA, que conecta personas, espacios, alarmas, dispositivos y servicios. Empieza en una habitación y se extiende a todo el centro, sin cambiar lo que ya funciona.</p>
         <p style="margin-top:14px;font-size:16px;line-height:1.65;color:#55636E;text-wrap:pretty">Creemos que un hospital se mide por cómo cuida. Por eso no vendemos aparatos sueltos: construimos un ecosistema donde todo habla el mismo idioma y trabaja para lo único que importa: las personas. Una sola arquitectura, múltiples áreas, un Smart Hospital.</p>
       </div>
       <div id="adv2-eco-grid" data-stagger="" style="margin-top:52px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:24px">
@@ -205,7 +241,7 @@
         </div>
       </div>
       <div style="margin-top:56px;padding:28px 24px;border-top:1px solid #E3E9EA;border-bottom:1px solid #E3E9EA;display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:12px 22px;font-size:clamp(18px,2vw,22px);font-weight:700;letter-spacing:-.01em;color:#16374D;text-align:center">
-        <span>Una arquitectura</span><span aria-hidden="true" style="color:#7d8720;font-size:1.5em;line-height:1">·</span><span>Múltiples áreas</span><span aria-hidden="true" style="color:#7d8720;font-size:1.5em;line-height:1">·</span><span>Un Smart Hospital.</span>
+        <span>Una inteligencia</span><span aria-hidden="true" style="color:#7d8720;font-size:1.5em;line-height:1">·</span><span>Una arquitectura</span><span aria-hidden="true" style="color:#7d8720;font-size:1.5em;line-height:1">·</span><span>Un Smart Hospital.</span>
       </div>
       <div style="margin-top:40px;display:flex;flex-wrap:wrap;gap:16px;justify-content:center">
         <button type="button" onClick="{{ goSoluciones }}" style="display:inline-flex;align-items:center;justify-content:center;gap:10px;background:#0E8C99;color:#fff;border:0;border-radius:999px;min-height:54px;padding:12px 30px;white-space:nowrap;max-width:100%;font-size:16px;font-weight:700;cursor:pointer;transition:background 180ms var(--ease-out),transform 180ms var(--ease-out)" style-hover="background:#0A6B75;transform:translateY(-1px)">Descubre el ecosistema SmartHospital<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round"><path d="M5 12h13M12.5 6l5.5 6-5.5 6"></path></svg></button>
@@ -221,7 +257,7 @@
     <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(22,55,77,.50) 0%,rgba(22,55,77,.74) 34%,rgba(22,55,77,.88) 100%)"></div>
     <div style="position:relative;max-width:1240px;margin:0 auto;padding:100px 24px">
       <h2 style="font-size:clamp(28px,3.2vw,40px);line-height:1.15;letter-spacing:-.02em;font-weight:800;color:#fff;text-align:center;text-shadow:0 2px 20px rgba(9,26,38,.6)">Un hospital que da el salto.</h2>
-      <div data-stagger="" style="margin-top:56px;display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:36px">
+      <div data-stagger="" style="margin-top:56px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:36px">
         <div>
           <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#7FD4DB" stroke-width="1.3" stroke-linecap="round"><path d="M12 3.5l2.6 5.4 5.9.8-4.3 4.2 1 5.9-5.2-2.8-5.2 2.8 1-5.9L3.5 9.7l5.9-.8z"></path></svg>
           <h3 style="margin-top:18px;font-size:19px;font-weight:700;color:#fff;text-shadow:0 1px 14px rgba(9,26,38,.65)">Un referente</h3>
@@ -250,7 +286,7 @@
     <div style="max-width:1240px;margin:0 auto;padding:104px 24px">
       <h2 style="font-size:clamp(28px,3.2vw,40px);line-height:1.15;letter-spacing:-.02em;font-weight:800;color:#16374D">Ya lo hacemos donde más exige.</h2>
       <p style="margin-top:14px;font-size:18px;line-height:1.6;color:#55636E">Grandes hospitales confían en Advantecnia para cuidar mejor.</p>
-      <div style="margin-top:44px;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px">
+      <div style="margin-top:44px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:24px">
         <div style="border:1px solid #E3E9EA;border-radius:20px;overflow:hidden">
           <div style="position:relative;width:100%;aspect-ratio:3/2;background:#E7F1F2"><img src="assets/img/gregorio-maranon.webp" alt="Hospital General Universitario Gregorio Marañón, Madrid"></div>
           <div style="padding:22px"><h3 style="font-size:17px;font-weight:700;color:#16374D">Hospital Gregorio Marañón</h3><p style="margin-top:6px;font-size:14px;color:#55636E">Madrid</p></div>
@@ -273,7 +309,7 @@
   </section>
 
   <section id="adv2-auditoria" data-rise="" style="background:#16374D">
-    <div style="max-width:1240px;margin:0 auto;padding:96px 24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:56px;align-items:start">
+    <div style="max-width:1240px;margin:0 auto;padding:96px 24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:56px;align-items:start">
       <div>
         <h2 style="font-size:clamp(28px,3.2vw,40px);line-height:1.15;letter-spacing:-.02em;font-weight:800;color:#fff;text-wrap:balance">¿Por dónde empezar? Te lo decimos gratis.</h2>
         <p style="margin-top:20px;font-size:18px;line-height:1.65;color:#C4D6DF;max-width:52ch">Un asesor experto analiza tu hospital y te muestra qué soluciones pueden llevarlo al siguiente nivel, con prioridades claras y sin compromiso.</p>
@@ -319,7 +355,7 @@
 <sc-if value="{{ isEmpresa }}" hint-placeholder-val="{{ false }}">
 <div>
   <section data-rise="" style="background:#E7F1F2">
-    <div style="max-width:1240px;margin:0 auto;padding:80px 24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:48px;align-items:center">
+    <div style="max-width:1240px;margin:0 auto;padding:80px 24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:48px;align-items:center">
       <div>
         <h1 style="font-size:clamp(32px,4.2vw,52px);line-height:1.08;letter-spacing:-.025em;font-weight:800;color:#16374D;text-wrap:balance">Quiénes Somos</h1>
         <p style="margin-top:22px;font-size:19px;line-height:1.65;color:#55636E;max-width:54ch;text-wrap:pretty">Advantecnia pertenece a <strong style="color:#16374D">ACE Business Group (ACE BG)</strong>, grupo empresarial multidisciplinar con amplia experiencia en los <strong style="color:#16374D">sistemas para hospitales</strong> para edificaciones e infraestructuras especializadas, donde el componente tecnológico es fundamental.</p>
@@ -340,7 +376,7 @@
   </section>
 
   <section data-rise="" style="background:#E7F1F2">
-    <div data-stagger="" style="max-width:1240px;margin:0 auto;padding:88px 24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px">
+    <div data-stagger="" style="max-width:1240px;margin:0 auto;padding:88px 24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:24px">
       <div style="background:#0E8C99;border-radius:20px;padding:36px;display:flex;flex-direction:column;gap:14px;box-shadow:0 14px 40px rgba(14,140,153,.22);transition:box-shadow 220ms var(--ease-out),transform 220ms var(--ease-out)" style-hover="transform:translateY(-4px);box-shadow:0 22px 56px rgba(14,140,153,.30)">
         <p style="font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#BDEAEE">Misión</p>
         <p style="font-size:18px;line-height:1.6;color:#fff;font-weight:600">Apoyar al cliente en todo el proceso de equipamiento e infraestructura de hospitales, centros socio-sanitarios, colegios y empresas privadas, entre otros.</p>
@@ -366,7 +402,7 @@
   <section data-rise="" style="background:#fff">
     <div style="max-width:1240px;margin:0 auto;padding:96px 24px">
       <h2 style="font-size:clamp(26px,3vw,36px);line-height:1.18;letter-spacing:-.02em;font-weight:800;color:#16374D">Certificaciones</h2>
-      <div data-stagger="" style="margin-top:28px;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px">
+      <div data-stagger="" style="margin-top:28px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:20px">
         <a href="https://advantecnia.com/wp-content/uploads/2022/09/certificado_2022.pdf" target="_blank" rel="noopener" style="display:flex;flex-direction:column;gap:10px;background:#fff;border:1px solid #E3E9EA;border-radius:20px;padding:28px;color:#16374D;box-shadow:0 2px 8px rgba(22,55,77,.06);transition:box-shadow 220ms var(--ease-out),transform 220ms var(--ease-out)" style-hover="box-shadow:0 12px 30px rgba(22,55,77,.12);color:#16374D;transform:translateY(-4px)">
           <span style="font-size:17px;font-weight:700;line-height:1.5">Certificado en Sistema en Gestión de Calidad Según la norma ISO 9001:2015</span>
           <span style="font-size:15px;font-weight:700;color:#0E8C99">Descarga aquí ›</span>
@@ -423,7 +459,7 @@
   </section>
 
   <section data-rise="" style="background:#fff">
-    <div style="max-width:1240px;margin:0 auto;padding:96px 24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:48px;align-items:center">
+    <div style="max-width:1240px;margin:0 auto;padding:96px 24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:48px;align-items:center">
       <div>
         <h2 style="font-size:clamp(26px,3vw,36px);line-height:1.18;letter-spacing:-.02em;font-weight:800;color:#16374D">Proyección internacional</h2>
         <p style="margin-top:20px;font-size:18px;line-height:1.7;color:#55636E;max-width:56ch;text-wrap:pretty">Tenemos la capacidad de proveer soluciones en diferentes países para la ejecución de obras e instalaciones. Así mismo trabajamos de la mano con nuestros distribuidores brindándoles apoyo técnico, logístico y comercial en diferentes países. Actualmente poseemos oficinas técnicas y comerciales en Europa, Norte América (USA), Asia, África y en gran parte de Latinoamérica.</p>
@@ -451,9 +487,9 @@
     </div>
     <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(22,55,77,.55) 0%,rgba(22,55,77,.68) 50%,rgba(22,55,77,.82) 100%)"></div>
     <div style="position:relative;max-width:1000px;margin:0 auto;padding:120px 24px 96px">
-      <p style="font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#9EE2E9">SmartHospital</p>
-      <h1 style="margin-top:18px;font-size:clamp(32px,4.2vw,52px);line-height:1.08;letter-spacing:-.025em;font-weight:800;color:#fff;text-wrap:balance;text-shadow:0 2px 20px rgba(9,26,38,.5)">Un ecosistema para llevar tu hospital al siguiente nivel.</h1>
-      <p style="margin-top:22px;font-size:19px;line-height:1.65;color:#E3EDF2;max-width:62ch;text-wrap:pretty">Cuatro familias sobre una misma arquitectura. Empieza por donde más lo necesitas y crece a tu ritmo, sin tirar lo que ya tienes.</p>
+      <p style="font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#9EE2E9">SmartHospital · Impulsado por Connect.IA</p>
+      <h1 style="margin-top:18px;font-size:clamp(32px,4.2vw,52px);line-height:1.08;letter-spacing:-.025em;font-weight:800;color:#fff;text-wrap:balance;text-shadow:0 2px 20px rgba(9,26,38,.5)">Una inteligencia, cuatro familias, un hospital al siguiente nivel.</h1>
+      <p style="margin-top:22px;font-size:19px;line-height:1.65;color:#E3EDF2;max-width:62ch;text-wrap:pretty">Connect.IA es el cerebro del ecosistema. SmartRoom, SmartSense, SmartFlow y SmartCore son sus sentidos y sus manos: captan lo que ocurre y actúan donde hace falta. Empieza por donde más lo necesitas y crece a tu ritmo.</p>
     </div>
   </section>
 
@@ -468,7 +504,7 @@
   <sc-for list="{{ solPanels }}" as="s" hint-placeholder-count="1">
   <div style="display:{{ s.show }}">
     <section style="background:#fff">
-      <div style="max-width:1240px;margin:0 auto;padding:88px 24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:56px;align-items:center;animation:advEcoBody 420ms var(--ease-out) both">
+      <div style="max-width:1240px;margin:0 auto;padding:88px 24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:56px;align-items:center;animation:advEcoBody 420ms var(--ease-out) both">
         <div>
           <p style="font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#0E8C99">{{ s.name }}</p>
           <h2 style="margin-top:14px;font-size:clamp(30px,3.6vw,46px);line-height:1.1;letter-spacing:-.025em;font-weight:800;color:#16374D;text-wrap:balance">{{ s.h2 }}</h2>
@@ -501,6 +537,26 @@
               </li>
             </sc-for>
           </ol>
+        </div>
+      </div>
+    </section>
+
+    <section style="background:#fff">
+      <div style="max-width:1240px;margin:0 auto;padding:0 24px 88px">
+        <div style="background:#F4F6E6;border-radius:20px;padding:clamp(32px,4vw,48px)">
+          <div style="display:flex;flex-wrap:wrap;align-items:center;gap:12px">
+            <span style="display:inline-flex;align-items:center;height:32px;padding:0 14px;border-radius:999px;background:#a7b42c;color:#fff;font-size:13px;font-weight:800">Connect.IA</span>
+            <p style="font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#6B7420">Qué hace Connect.IA aquí</p>
+          </div>
+          <h3 style="margin-top:20px;font-size:clamp(24px,2.6vw,32px);line-height:1.2;letter-spacing:-.02em;font-weight:800;color:#16374D;max-width:34ch;text-wrap:balance">{{ s.ia.lead }}</h3>
+          <div id="adv3-ia-pts" style="margin-top:32px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px">
+            <sc-for list="{{ s.iaPts }}" as="ip" hint-placeholder-count="3">
+              <div style="padding-top:18px;border-top:1px solid #d8db96">
+                <span style="font-size:13px;font-weight:800;letter-spacing:.1em;color:#6B7420">{{ ip.n }}</span>
+                <p style="margin-top:8px;font-size:17px;line-height:1.6;color:#33434F;text-wrap:pretty">{{ ip.t }}</p>
+              </div>
+            </sc-for>
+          </div>
         </div>
       </div>
     </section>
@@ -598,7 +654,7 @@
     <sc-if value="{{ s.hasExtra }}" hint-placeholder-val="{{ false }}">
     <section style="background:#fff">
       <div style="max-width:1240px;margin:0 auto;padding:72px 24px 0">
-        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px">
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:24px">
           <div style="position:relative;aspect-ratio:3/2;background:#E7F1F2">
             <img src="assets/img/{{ s.slotIdB }}.webp" alt="{{ s.slotHintB }}" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
           </div>
@@ -631,9 +687,9 @@
       <div style="max-width:760px">
         <p style="font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#0E8C99">Cómo trabajamos contigo</p>
         <h2 style="margin-top:16px;font-size:clamp(28px,3.2vw,40px);line-height:1.15;letter-spacing:-.02em;font-weight:800;color:#16374D;text-wrap:balance">De tu hospital de hoy a tu Smart Hospital, por fases.</h2>
-        <p style="margin-top:18px;font-size:18px;line-height:1.6;color:#55636E;text-wrap:pretty">Una arquitectura modular te permite transformar el centro paso a paso, sin perder la visión global.</p>
+        <p style="margin-top:18px;font-size:18px;line-height:1.6;color:#55636E;text-wrap:pretty">Una arquitectura modular te permite transformar el centro paso a paso, con Connect.IA dando una visión global desde el principio.</p>
       </div>
-      <ol data-stagger="" style="margin-top:56px;list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px">
+      <ol data-stagger="" style="margin-top:56px;list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:20px">
         <sc-for list="{{ fases }}" as="f" hint-placeholder-count="5">
           <li style="background:#fff;border-radius:20px;padding:28px;border:1px solid #E7ECED;display:flex;flex-direction:column;gap:12px">
             <span style="font-size:13px;font-weight:800;letter-spacing:.1em;color:#0E8C99">{{ f.n }}</span>
@@ -675,7 +731,7 @@
         <button type="button" onClick="{{ tabProyInt }}" style="height:44px;padding:0 24px;border-radius:999px;border:1px solid {{ proyIntBd }};background:{{ proyIntBg }};color:{{ proyIntFg }};font-size:14px;font-weight:700;cursor:pointer">Internacional</button>
       </div>
       <sc-if value="{{ isProyEs }}" hint-placeholder-val="{{ true }}">
-      <div style="margin-top:32px;display:grid;grid-template-columns:repeat(auto-fit,minmax(420px,1fr));gap:28px">
+      <div style="margin-top:32px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:28px">
         <sc-for list="{{ proyectosEs }}" as="p" hint-placeholder-count="4">
           <button onClick="{{ p.open }}" style="text-align:left;background:#fff;border:1px solid #E3E9EA;border-radius:20px;overflow:hidden;padding:0;cursor:pointer;display:flex;flex-direction:column;transition:box-shadow 180ms,transform 180ms" style-hover="box-shadow:0 12px 30px rgba(22,55,77,.12);transform:translateY(-2px)">
             <div style="position:relative;width:100%;aspect-ratio:16/9;background:#E7F1F2"><sc-if value="{{ p.img }}" hint-placeholder-val="{{ false }}"><img src="{{ p.img }}" alt="{{ p.alt }}"></sc-if></div>
@@ -696,7 +752,7 @@
       </div>
       </sc-if>
       <sc-if value="{{ isProyInt }}">
-      <div style="margin-top:32px;display:grid;grid-template-columns:repeat(auto-fit,minmax(420px,1fr));gap:28px">
+      <div style="margin-top:32px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:28px">
         <sc-for list="{{ proyectosInt }}" as="p" hint-placeholder-count="4">
           <button onClick="{{ p.open }}" style="text-align:left;background:#fff;border:1px solid #E3E9EA;border-radius:20px;overflow:hidden;padding:0;cursor:pointer;display:flex;flex-direction:column;transition:box-shadow 180ms,transform 180ms" style-hover="box-shadow:0 12px 30px rgba(22,55,77,.12);transform:translateY(-2px)">
             <div style="position:relative;width:100%;aspect-ratio:16/9;background:#E7F1F2"><sc-if value="{{ p.img }}" hint-placeholder-val="{{ false }}"><img src="{{ p.img }}" alt="{{ p.alt }}"></sc-if></div>
@@ -882,7 +938,7 @@
 
 <div style="height:8px;background:linear-gradient(90deg,#0E8C99 0%,#16374D 60%,#0A2B3E 100%)"></div>
 <footer style="background:#16374D;color:#C4D6DF">
-  <div style="max-width:1240px;margin:0 auto;padding:72px 24px 40px;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:40px">
+  <div style="max-width:1240px;margin:0 auto;padding:72px 24px 40px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:40px">
     <div>
       <img src="assets/advantecnia-logo-reverse.png" alt="Advantecnia" style="width:196px;height:auto;display:block">
       <p style="margin-top:16px;font-size:15px;line-height:1.6;max-width:32ch">Tecnología al servicio de las personas · Una marca de ACE Business Group</p>
@@ -1183,6 +1239,7 @@ class Component extends DCLogic {
       solPanels: Component.FAM.map(s => Object.assign({}, s, {
         show: (this.state.sol || 'room') === s.id ? 'block' : 'none',
         how: s.how.map((t, i) => ({ t, n: i + 1 })),
+        iaPts: s.ia.points.map((t, i) => ({ t, n: '0' + (i + 1) })),
         where: s.where.split(' · '),
         legal: s.legal || '',
         star: !!s.starName,
@@ -1379,14 +1436,15 @@ Component.PROYECTOS = [
 Component.FAM = [
  {
   "id": "room",
+  "ia": {"lead":"Connect.IA entiende lo que necesita cada paciente y lo resuelve por el camino más corto.","points":["Clasifica cada llamada por urgencia y la dirige a la persona adecuada del equipo.","Coordina a NurIA para que resuelva por voz las peticiones cotidianas sin ocupar a enfermería.","Ajusta luz, clima y persianas según la hora y las necesidades del paciente."]},
   "name": "SmartRoom",
   "h2": "La habitación que comunica, acompaña y cuida.",
-  "sub": "La unidad de experiencia del paciente. Todo lo que ocurre en la habitación, conectado e inteligente.",
+  "sub": "La unidad de experiencia del paciente. Todo lo que ocurre en la habitación, conectado y gestionado por Connect.IA.",
   "obj": "Convertir cada habitación en una experiencia que eleva el nivel de tu hospital: un paciente mejor atendido y acompañado, y un equipo que dedica su tiempo a cuidar, no a tareas repetitivas. Es lo primero que ve el paciente y su familia —y lo que más marca su percepción del centro—.",
   "how": [
-   "Integramos comunicación, entretenimiento, control de la habitación y monitorización sobre una sola plataforma.",
-   "Añadimos inteligencia artificial para que el paciente sea más autónomo y el equipo, más eficiente.",
-   "Desplegamos en Cloud o On-Premise, de forma modular, compatible con sistemas de terceros."
+   "Conectamos comunicación, entretenimiento, control de la habitación y monitorización con Connect.IA.",
+   "Connect.IA interpreta cada petición del paciente y la resuelve o la dirige a quien corresponde.",
+   "Desplegamos en Cloud o On-Premise, de forma modular y compatible con sistemas de terceros, con la IA activa desde el primer día."
   ],
   "items": [
    {
@@ -1413,20 +1471,21 @@ Component.FAM = [
   "starEyebrow": "Destacado",
   "starName": "NurIA",
   "starTag": "Asistente hospitalario con IA",
-  "starBody": "NurIA no sustituye a tus enfermeras: les devuelve su tiempo. Atiende por voz las peticiones cotidianas del paciente —agua, comida, luz, información— las 24 horas, actúa sobre la habitación y se integra con la plataforma. Más autonomía para el paciente, menos carga para tu equipo.",
+  "starBody": "NurIA no sustituye a tus enfermeras: les devuelve su tiempo. Atiende por voz las peticiones cotidianas del paciente —agua, comida, luz, información— las 24 horas y actúa sobre la habitación. Connect.IA la coordina con el resto del hospital. Más autonomía para el paciente, menos carga para tu equipo.",
   "where": "Hospitalización · UCI · Residencias · Puestos de enfermería",
   "cta": "Habla con un experto para asesorarte"
  },
  {
   "id": "sense",
+  "ia": {"lead":"Connect.IA convierte las señales de los sensores en avisos que importan.","points":["Aprende el patrón normal de cada paciente y detecta cuándo algo cambia.","Anticipa salidas de cama y caídas para actuar antes del incidente.","Filtra falsas alarmas para que el equipo solo reciba lo relevante."]},
   "name": "SmartSense",
   "h2": "Vigila lo que una persona no puede vigilar 24/7.",
   "sub": "Monitorización continua y no invasiva del paciente y su entorno. Sin cámaras. Sin contacto.",
   "obj": "Reducir incidentes y darte tranquilidad: detectar a tiempo caídas, salidas de cama o cambios en las constantes, sin invadir la intimidad del paciente ni depender de que alguien esté mirando. Menos sustos, más seguridad y una reputación de centro que cuida de verdad.",
   "how": [
-   "Combinamos sensores especializados con inteligencia artificial para observar sin molestar.",
-   "Cuando algo se sale de lo normal, el sistema alerta al instante a pantallas y móviles.",
-   "Todo se integra con el resto del ecosistema para que el aviso llegue a quien debe, cuando debe."
+   "Combinamos sensores especializados con Connect.IA para observar sin molestar.",
+   "Connect.IA aprende lo normal en cada paciente y alerta al instante cuando algo cambia.",
+   "El aviso llega a pantallas y móviles de quien debe atenderlo, con la prioridad que corresponde."
   ],
   "items": [
    {
@@ -1448,14 +1507,15 @@ Component.FAM = [
  },
  {
   "id": "flow",
+  "ia": {"lead":"Connect.IA coordina la operación del edificio como un solo sistema.","points":["Cruza localización, accesos y turnos para ordenar los flujos de pacientes y personal.","Detecta cuellos de botella en colas, urgencias y quirófanos y propone cómo resolverlos.","Activa megafonía, cartelería y accesos de forma coordinada ante una emergencia."]},
   "name": "SmartFlow",
   "h2": "Que todo el hospital funcione como un reloj.",
   "sub": "Operación, seguridad y gestión conectadas más allá de la habitación, en cada área del centro.",
   "obj": "Que tu hospital funcione fluido, seguro y ordenado de punta a punta: mejores flujos de pacientes, más control de accesos y activos, y una operación que se nota en la experiencia y en las cuentas. La inteligencia del SmartRoom, extendida a todo el edificio.",
   "how": [
    "Conectamos seguridad, comunicaciones, logística y gestión sobre la misma arquitectura.",
-   "Centralizamos el control para que dirijas todas las áreas desde un único lugar.",
-   "Todo queda registrado y trazado: datos para decidir con criterio."
+   "Connect.IA coordina todas las áreas y te da el control desde un único lugar.",
+   "Cada evento queda registrado y analizado: datos para decidir con criterio."
   ],
   "items": [
    {
@@ -1488,19 +1548,20 @@ Component.FAM = [
  },
  {
   "id": "core",
+  "ia": {"lead":"Aquí vive Connect.IA: la inteligencia que gobierna todo el ecosistema.","points":["Recibe los datos de AdvantLink, el IoT y la red, y decide qué hacer con cada evento.","Centraliza, prioriza, escala y da seguimiento a todas las alarmas del centro.","Mide cada respuesta frente a los parámetros de excelencia del sector salud."]},
   "name": "SmartCore",
   "h2": "El cerebro que lo conecta todo, sobre una red preparada para el futuro.",
   "sub": "La plataforma que hace que todo hable el mismo idioma y la infraestructura óptica que lo sostiene.",
   "obj": "Que tu inversión de hoy siga sirviendo mañana. SmartCore es lo que convierte piezas sueltas en un ecosistema: integra lo que ya tienes, lo que instales y lo que venga después, sobre una red pensada para crecer sin obras interminables. Menos proveedores, menos riesgo, un solo hospital conectado.",
   "how": [
-   "Integramos sistemas actuales, futuros y heredados de forma bidireccional, no reemplazamos.",
-   "Preparamos el hospital para la nueva era de la IA y el IoT desde el primer día.",
+   "Integramos sistemas actuales, futuros y heredados de forma bidireccional, sin reemplazar.",
+   "Connect.IA se asienta sobre esa integración y gobierna todo el ecosistema.",
    "Desplegamos una red óptica que centraliza, simplifica y abarata el coste total."
   ],
   "items": [
    {
-    "t": "ConnectIA",
-    "d": "Nueva plataforma de gestión de alarmas preparada para IA: centraliza, prioriza, escala y da seguimiento a los eventos. Complementa a AdvantLink (no lo sustituye)."
+    "t": "Connect.IA",
+    "d": "La inteligencia artificial de Advantecnia y cerebro de SmartHospital: centraliza, prioriza, escala y da seguimiento a los eventos de todo el centro, y orquesta AdvantLink y NurIA."
    },
    {
     "t": "Servidor MQTT / IoT",
@@ -1514,15 +1575,81 @@ Component.FAM = [
   "starEyebrow": "Destacado",
   "starName": "AdvantLink",
   "starTag": "La plataforma de interoperabilidad",
-  "starBody": "El corazón invisible del SmartHospital. Se conecta con cualquier sistema que ya tengas —pasado, presente o futuro— mediante datapoints e interfaces, de forma bidireccional: llamada enfermera, accesos, cámaras IP, incendios, BMS, sensores y comunicaciones. Un único lenguaje para todo tu hospital.",
+  "starBody": "El corazón invisible del SmartHospital. Se conecta con cualquier sistema que ya tengas —pasado, presente o futuro— mediante datapoints e interfaces, de forma bidireccional: llamada enfermera, accesos, cámaras IP, incendios, BMS, sensores y comunicaciones. Un único lenguaje para todo tu hospital, sobre el que trabaja Connect.IA.",
   "where": "Todo el centro · Servicios técnicos · Data center",
   "cta": "Habla con nosotros sobre integración"
  }
 ];
 
-Component.FASES = [{"n":"01","t":"Diagnóstico","d":"Analizamos tu entorno, procesos y red actual."},{"n":"02","t":"Diseño","d":"Definimos la arquitectura y las soluciones por área."},{"n":"03","t":"Despliegue","d":"Instalamos SmartRoom, red y soluciones."},{"n":"04","t":"Integración","d":"Conectamos todo con SmartCore (AdvantLink, ConnectIA e IoT)."},{"n":"05","t":"Operación","d":"Formación, monitorización y soporte continuo."}];
+Component.FASES = [{"n":"01","t":"Diagnóstico","d":"Analizamos tu entorno, procesos y red actual, y los datos que Connect.IA podrá aprovechar."},{"n":"02","t":"Diseño","d":"Definimos la arquitectura, las soluciones por área y los parámetros de excelencia que Connect.IA debe cumplir."},{"n":"03","t":"Despliegue","d":"Instalamos SmartRoom, red y soluciones, con Connect.IA activa desde el primer día."},{"n":"04","t":"Integración","d":"Conectamos todo con SmartCore: AdvantLink e IoT, con Connect.IA orquestando el conjunto."},{"n":"05","t":"Operación","d":"Connect.IA monitoriza, aprende y mejora; nuestro equipo forma y da soporte continuo."}];
 
 Component.DICT = {
+  "Impulsado por Connect.IA": "Powered by Connect.IA",
+  "La inteligencia que lleva tu hospital al siguiente nivel.": "The intelligence that takes your hospital to the next level.",
+  "Connect.IA, nuestra inteligencia artificial, está detrás de cada sistema de tu hospital para que todo funcione según los parámetros de excelencia que exige el sector salud. Se integra con lo que ya tienes.": "Connect.IA, our artificial intelligence, works behind every system in your hospital so everything performs to the standards of excellence the healthcare sector demands. It integrates with what you already have.",
+  "Conoce Connect.IA ↓": "Meet Connect.IA ↓",
+  "Inteligencia artificial propia": "Our own artificial intelligence",
+  "Connect.IA, el cerebro de todo el hospital.": "Connect.IA, the brain of the whole hospital.",
+  "Connect.IA es la inteligencia artificial desarrollada por Advantecnia. Está detrás de todo el ecosistema SmartHospital y hace que cada sistema funcione según los parámetros de excelencia que exige el sector salud.": "Connect.IA is the artificial intelligence developed by Advantecnia. It sits behind the entire SmartHospital ecosystem and makes every system perform to the standards of excellence the healthcare sector demands.",
+  "Las cuatro familias son sus sentidos y sus manos: captan lo que ocurre en cada habitación y cada área, y actúan donde hace falta. NurIA y AdvantLink mantienen su función; Connect.IA los orquesta.": "The four families are its senses and its hands: they capture what happens in every room and area, and act where needed. NurIA and AdvantLink keep their roles; Connect.IA orchestrates them.",
+  "Paciente": "Patient",
+  "Monitorización": "Monitoring",
+  "Operación": "Operations",
+  "Plataforma": "Platform",
+  "Orquesta": "Orchestrates",
+  "Escucha": "Listens",
+  "Entiende": "Understands",
+  "Actúa": "Acts",
+  "Mejora": "Improves",
+  "Recoge en tiempo real las señales de habitaciones, sensores, dispositivos y sistemas.": "Collects signals from rooms, sensors, devices and systems in real time.",
+  "Interpreta cada evento con el contexto del paciente y los protocolos del centro.": "Interprets each event in the context of the patient and the centre’s protocols.",
+  "Prioriza, escala y lleva cada aviso a la persona adecuada, en el momento adecuado.": "Prioritises, escalates and routes each alert to the right person at the right time.",
+  "Mide cada respuesta y convierte los datos en decisiones para dirigir con criterio.": "Measures every response and turns data into decisions for sound management.",
+  "Ver Connect.IA en cada solución": "See Connect.IA in every solution",
+  "Connect.IA en el centro": "Connect.IA at the centre",
+  "Nuestra inteligencia artificial propia coordina todo el ecosistema y libera a tu equipo para lo que de verdad importa.": "Our own artificial intelligence coordinates the whole ecosystem and frees your team for what really matters.",
+  "SmartHospital es la forma Advantecnia de llevar tu hospital al siguiente nivel: un único ecosistema, gobernado por Connect.IA, que conecta personas, espacios, alarmas, dispositivos y servicios. Empieza en una habitación y se extiende a todo el centro, sin cambiar lo que ya funciona.": "SmartHospital is the Advantecnia way to take your hospital to the next level: a single ecosystem, governed by Connect.IA, that connects people, spaces, alarms, devices and services. It starts in one room and extends to the whole centre, without changing what already works.",
+  "Una inteligencia": "One intelligence",
+  "SmartHospital · Impulsado por Connect.IA": "SmartHospital · Powered by Connect.IA",
+  "Una inteligencia, cuatro familias, un hospital al siguiente nivel.": "One intelligence, four families, a hospital at the next level.",
+  "Connect.IA es el cerebro del ecosistema. SmartRoom, SmartSense, SmartFlow y SmartCore son sus sentidos y sus manos: captan lo que ocurre y actúan donde hace falta. Empieza por donde más lo necesitas y crece a tu ritmo.": "Connect.IA is the brain of the ecosystem. SmartRoom, SmartSense, SmartFlow and SmartCore are its senses and hands: they capture what happens and act where needed. Start where you need it most and grow at your own pace.",
+  "Qué hace Connect.IA aquí": "What Connect.IA does here",
+  "Connect.IA entiende lo que necesita cada paciente y lo resuelve por el camino más corto.": "Connect.IA understands what each patient needs and resolves it by the shortest route.",
+  "Clasifica cada llamada por urgencia y la dirige a la persona adecuada del equipo.": "Classifies every call by urgency and routes it to the right member of the team.",
+  "Coordina a NurIA para que resuelva por voz las peticiones cotidianas sin ocupar a enfermería.": "Coordinates NurIA to handle everyday requests by voice without taking up nursing time.",
+  "Ajusta luz, clima y persianas según la hora y las necesidades del paciente.": "Adjusts lighting, climate and blinds to the time of day and the patient’s needs.",
+  "Connect.IA convierte las señales de los sensores en avisos que importan.": "Connect.IA turns sensor signals into alerts that matter.",
+  "Aprende el patrón normal de cada paciente y detecta cuándo algo cambia.": "Learns each patient’s normal pattern and detects when something changes.",
+  "Anticipa salidas de cama y caídas para actuar antes del incidente.": "Anticipates bed exits and falls so staff can act before an incident.",
+  "Filtra falsas alarmas para que el equipo solo reciba lo relevante.": "Filters false alarms so the team only receives what matters.",
+  "Connect.IA coordina la operación del edificio como un solo sistema.": "Connect.IA runs the building’s operations as a single system.",
+  "Cruza localización, accesos y turnos para ordenar los flujos de pacientes y personal.": "Combines location, access and shift data to organise patient and staff flows.",
+  "Detecta cuellos de botella en colas, urgencias y quirófanos y propone cómo resolverlos.": "Detects bottlenecks in queues, emergency and operating rooms and suggests how to resolve them.",
+  "Activa megafonía, cartelería y accesos de forma coordinada ante una emergencia.": "Triggers PA, signage and access control in a coordinated way during an emergency.",
+  "Aquí vive Connect.IA: la inteligencia que gobierna todo el ecosistema.": "This is where Connect.IA lives: the intelligence that governs the whole ecosystem.",
+  "Recibe los datos de AdvantLink, el IoT y la red, y decide qué hacer con cada evento.": "Receives data from AdvantLink, IoT and the network, and decides what to do with each event.",
+  "Centraliza, prioriza, escala y da seguimiento a todas las alarmas del centro.": "Centralises, prioritises, escalates and tracks every alarm in the centre.",
+  "Mide cada respuesta frente a los parámetros de excelencia del sector salud.": "Measures every response against healthcare standards of excellence.",
+  "Conectamos comunicación, entretenimiento, control de la habitación y monitorización con Connect.IA.": "We connect communication, entertainment, room control and monitoring with Connect.IA.",
+  "Connect.IA interpreta cada petición del paciente y la resuelve o la dirige a quien corresponde.": "Connect.IA interprets each patient request and resolves it or routes it to the right person.",
+  "Desplegamos en Cloud o On-Premise, de forma modular y compatible con sistemas de terceros, con la IA activa desde el primer día.": "We deploy in the Cloud or On-Premise, modular and compatible with third-party systems, with AI active from day one.",
+  "Combinamos sensores especializados con Connect.IA para observar sin molestar.": "We combine specialised sensors with Connect.IA to observe without disturbing.",
+  "Connect.IA aprende lo normal en cada paciente y alerta al instante cuando algo cambia.": "Connect.IA learns what is normal for each patient and alerts instantly when something changes.",
+  "El aviso llega a pantallas y móviles de quien debe atenderlo, con la prioridad que corresponde.": "The alert reaches the screens and phones of whoever must respond, with the right priority.",
+  "Connect.IA coordina todas las áreas y te da el control desde un único lugar.": "Connect.IA coordinates every area and gives you control from a single place.",
+  "Cada evento queda registrado y analizado: datos para decidir con criterio.": "Every event is logged and analysed: data for sound decisions.",
+  "Integramos sistemas actuales, futuros y heredados de forma bidireccional, sin reemplazar.": "We integrate current, future and legacy systems bidirectionally, without replacing them.",
+  "Connect.IA se asienta sobre esa integración y gobierna todo el ecosistema.": "Connect.IA sits on top of that integration and governs the whole ecosystem.",
+  "La unidad de experiencia del paciente. Todo lo que ocurre en la habitación, conectado y gestionado por Connect.IA.": "The patient experience unit. Everything that happens in the room, connected and managed by Connect.IA.",
+  "NurIA no sustituye a tus enfermeras: les devuelve su tiempo. Atiende por voz las peticiones cotidianas del paciente —agua, comida, luz, información— las 24 horas y actúa sobre la habitación. Connect.IA la coordina con el resto del hospital. Más autonomía para el paciente, menos carga para tu equipo.": "NurIA does not replace your nurses: it gives them back their time. It handles the patient’s everyday requests by voice (water, food, light, information) 24 hours a day and acts on the room. Connect.IA coordinates it with the rest of the hospital. More autonomy for the patient, less load for your team.",
+  "La inteligencia artificial de Advantecnia y cerebro de SmartHospital: centraliza, prioriza, escala y da seguimiento a los eventos de todo el centro, y orquesta AdvantLink y NurIA.": "Advantecnia’s artificial intelligence and the brain of SmartHospital: centralises, prioritises, escalates and tracks events across the centre, and orchestrates AdvantLink and NurIA.",
+  "Una arquitectura modular te permite transformar el centro paso a paso, con Connect.IA dando una visión global desde el principio.": "A modular architecture lets you transform the centre step by step, with Connect.IA providing a global view from the start.",
+  "Analizamos tu entorno, procesos y red actual, y los datos que Connect.IA podrá aprovechar.": "We analyse your environment, processes and current network, and the data Connect.IA will be able to use.",
+  "Definimos la arquitectura, las soluciones por área y los parámetros de excelencia que Connect.IA debe cumplir.": "We define the architecture, the solutions per area and the standards of excellence Connect.IA must meet.",
+  "Instalamos SmartRoom, red y soluciones, con Connect.IA activa desde el primer día.": "We install SmartRoom, network and solutions, with Connect.IA active from day one.",
+  "Conectamos todo con SmartCore: AdvantLink e IoT, con Connect.IA orquestando el conjunto.": "We connect everything with SmartCore: AdvantLink and IoT, with Connect.IA orchestrating the whole.",
+  "Connect.IA monitoriza, aprende y mejora; nuestro equipo forma y da soporte continuo.": "Connect.IA monitors, learns and improves; our team provides training and ongoing support.",
+  "El corazón invisible del SmartHospital. Se conecta con cualquier sistema que ya tengas —pasado, presente o futuro— mediante datapoints e interfaces, de forma bidireccional: llamada enfermera, accesos, cámaras IP, incendios, BMS, sensores y comunicaciones. Un único lenguaje para todo tu hospital, sobre el que trabaja Connect.IA.": "The invisible heart of SmartHospital. It connects to any system you already have — past, present or future — through datapoints and interfaces, bidirectionally: nurse call, access control, IP cameras, fire detection, BMS, sensors and communications. A single language for your whole hospital, on which Connect.IA works.",
   "Un ecosistema para llevar tu hospital al siguiente nivel.": "An ecosystem to take your hospital to the next level.",
   "Cuatro familias sobre una misma arquitectura. Empieza por donde más lo necesitas y crece a tu ritmo, sin tirar lo que ya tienes.": "Four families on a single architecture. Start where you need it most and grow at your own pace, without throwing away what you already have.",
   "La habitación que comunica, acompaña y cuida.": "The room that communicates, accompanies and cares.",
@@ -1615,7 +1742,7 @@ Component.DICT = {
   "Analizamos tu entorno, procesos y red actual.": "We analyse your environment, processes and current network.",
   "Definimos la arquitectura y las soluciones por área.": "We define the architecture and the solutions for each area.",
   "Instalamos SmartRoom, red y soluciones.": "We install SmartRoom, the network and the solutions.",
-  "Conectamos todo con SmartCore (AdvantLink, ConnectIA e IoT).": "We connect everything with SmartCore (AdvantLink, ConnectIA and IoT).",
+  "Conectamos todo con SmartCore (AdvantLink, Connect.IA e IoT).": "We connect everything with SmartCore (AdvantLink, Connect.IA and IoT).",
   "Formación, monitorización y soporte continuo.": "Training, monitoring and ongoing support.",
   "¿Por dónde empezar? Te lo decimos gratis.": "Where to start? We'll tell you for free.",
   "Un asesor experto analiza tu hospital y te muestra qué familia —SmartRoom, SmartSense, SmartFlow o SmartCore— puede llevarlo al siguiente nivel, con prioridades claras y sin compromiso.": "An expert advisor analyses your hospital and shows you which family — SmartRoom, SmartSense, SmartFlow or SmartCore — can take it to the next level, with clear priorities and no commitment.",
